@@ -14,7 +14,8 @@ const useStyles = makeStyles(() => ({
      backgroundColor: "#FFFFFF",
      paddingRight: "79px",
      paddingLeft: "100px",
-     boxShadow: "none"
+     boxShadow: "none",
+     position: "static"
   },
   menuButton: {
     fontFamily: "Open Sans, sans-serif",
