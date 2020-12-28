@@ -12,6 +12,7 @@ import returningCustomers from "../../assets/returningCustomers.png";
 import Header from "../Header";
 import CardsGuessing from "../CardsGuessing";
 import CardsPrincing from "../CardsPricing";
+import Subscribe from "../Subscribe";
 
 const useStyles = makeStyles(() => ({
   title: {
@@ -72,6 +73,9 @@ const useStyles = makeStyles(() => ({
     display: "flex",
     flexDirection: "row",
     maxWidth: "85%"
+  },
+  newsletter: {
+    color: "#343066"
   }
 }));
 
@@ -226,6 +230,21 @@ const Home = () => {
               <CardsPrincing cards={card} />
           )) }
         </Grid>
+      </Grid>
+      <Grid
+        container
+        spacing={0}
+        direction="column"
+        alignItems="center"
+        justify="center"
+        style={{ minHeight: '50vh', maxWidth: '100%' }}
+      >
+        <Grid item xs={3} align="center" className={classes.dataDrivenDashboard}>
+          <Typography variant="h4" className={classes.subtitle} gutterBottom>
+            Subscribe to our <span className={classes.newsletter}>newsletter</span>
+          </Typography>
+        </Grid>
+        <Subscribe />
       </Grid>
     
         
