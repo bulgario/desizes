@@ -1,82 +1,71 @@
 import React from "react";
 import { Typography, makeStyles, Grid, Button } from "@material-ui/core";
 
-import videoPreview from "../../assets/video-preview.png";
+import bodyShape from "../../assets/bodyShape.png";
 import wand from "../../assets/wand.png";
 import hassle from "../../assets/hassle.png";
 import omni from "../../assets/omni.png";
 import visual from "../../assets/visual.png";
-import dataDrivenDashboard from "../../assets/dataDrivenDashboard.png";
-import returningCustomers from "../../assets/returningCustomers.png";
+
+import desizesLandingPage from "../../assets/desizesLandingPage.png";
 
 import Header from "../Header";
 import CardsGuessing from "../CardsGuessing";
 import CardsPrincing from "../CardsPricing";
 import Subscribe from "../Subscribe";
+import Carousel from "../Carousel";
+import FormControl from "../FormControl";
+
 
 const useStyles = makeStyles(() => ({
+  backgroundImage: {
+    backgroundImage: `url(${desizesLandingPage})`,
+    height: 860
+  },
   title: {
-    font: "bold",
-    maxWidth: "100%",
+    display: 'flex',
+    justifyContent: 'center',
+    width: '100%',
+    paddingTop: 20,
+    fontSize: 50
   },
   subtitle: {
-    maxWidth: "100%",
-    marginBottom: 50
+    display: 'flex',
+    justifyContent: 'center',
+    width: '100%',
+    paddingTop: 20,
+    fontSize: 20
   },
-  tryItForFreeButton: {
-    fontFamily: "Open Sans, sans-serif",
-    fontWeight: 600,
-    size: "10px",
-    marginLeft: "38px",
-    backgroundColor: "#756CD9",
-    color: "#FFFFFF",
-    width: "250px",
-    height: "50px"
-  },
-  watchVideo: {
-    fontFamily: "Open Sans, sans-serif",
-    fontWeight: 600,
-    size: "10px",
-    marginLeft: "38px",
-    color: "#FFFFFF",
-    width: "250px",
-    height: "50px",
-    color: "#AFA9F2"
-  },
-  videoPreview: {
-    display: "flex",
-    justifyContent: "center"
-  },
-  dataDrivenDashboard: {
-    display: "flex",
-    justifyContent: "center",
-    marginTop: 80
-  },
-  button: {
-    display: "flex",
-    justifyContent: "center",
-    marginRight: 10,
-    marginBottom: 80
-  },
-  header: {
-    marginBottom: 50
+  titlePosition: {
+    paddingTop: 90
   },
   guessing: {
+    fontSize: 50,
     color: "#ffb259"
+  },
+  sizeble: {
+    display: 'flex',
+    justifyContent: 'center',
+    width: '100%',
+    marginTop: 80
+  },
+  sizebleTitle: {
+    fontSize: 50
   },
   box: {
     display: "flex",
     flexDirection: "row",
-    maxWidth: "85%"
+    maxWidth: "85%",
+    marginTop: 80,
+    height: 10,
+    maxWidth: '100%'
   },
   boxPricing: {
     display: "flex",
     flexDirection: "row",
-    maxWidth: "85%"
+    maxWidth: "85%",
+    marginTop: 80,
   },
-  newsletter: {
-    color: "#343066"
-  }
 }));
 
 const Home = () => {
@@ -133,121 +122,110 @@ const Home = () => {
 
   return (
     <>
-      <Header className={classes.header} />
-      <Grid
-        container
-        spacing={0}
-        direction="column"
-        alignItems="center"
-        justify="center"
-        style={{ minHeight: '100vh', maxWidth: '100%' }}
-      >
-        <Grid item className={classes.title} xs={3}>
-          <Typography variant="h3" className={classes.title} gutterBottom>
-            The easist, most accurate, and interactive
-          </Typography>
-          <Typography variant="h3" gutterBottom>
-            sizing guide for e-comm.
-          </Typography>
-        </Grid>
-          <Typography variant="h6" className={classes.subtitle} gutterBottom>
-            Enable your customers to shop with cofidence by eliminating the guessing work from your store.
-          </Typography>
+    <div className={classes.backgroundImage}>
+    <Grid 
+      container
+      xs={12}
+      direction="column"
+      alignItems="center"
+      justify="center"
+    >
+     <Header />
 
-        <Grid item xs={3} align="center" className={classes.button}>
-          <Button className={classes.tryItForFreeButton}>
-            TRY IT FOR FREE
-          </Button>
-          <Button className={classes.watchVideo}>
-            WATCH VIDEO
-          </Button>
-        </Grid>
-
-        <Grid item xs={3} align="center" className={classes.videoPreview} >
-          <img src={videoPreview} />
-        </Grid>
+     <Grid
+      item
+      xs={12}
+      className={classes.titlePosition}
+     >
+      <Grid item xs={12}>
+      <h3 className={classes.title}>  Open your digital fitting room </h3>
       </Grid>
+      <Grid item xs={12}>
+        <h3 className={classes.subtitle}> The easiest, most interactive sizing guide for e-comm. </h3>
+      </Grid>
+    </Grid>
+     <Grid
+      item
+      xs={12}
+     >
+      <img src={bodyShape} />
+      </Grid>
+
+        <Grid
+        item
+        xs={12}
+        >
+        <div className={classes.sizeble}>
+          <h3 className={classes.sizebleTitle}> A sizable upgrade</h3><h3 className={classes.guessing}>upgrade</h3>
+        </div>
+      </Grid>
+
       <Grid
-        container
+        item
+        xs={12}
         spacing={0}
         direction="column"
         alignItems="center"
         justify="center"
-        style={{ minHeight: '50vh', maxWidth: '100%' }}
+        className={classes.box}
       >
-        <Grid item xs={3}>
-        <Typography variant="h4" className={classes.subtitle} gutterBottom>
-          No more <span className={classes.guessing}>guessing</span>
-        </Typography>
-        </Grid>
-        <Grid item xs={3} className={classes.box}>
           { cards.map(card => (
             <CardsGuessing cards={card} />
           )) }
-        </Grid>
       </Grid>
 
       <Grid
-        container
-        spacing={0}
-        direction="column"
-        alignItems="center"
-        justify="center"
-        style={{ minHeight: '50vh', maxWidth: '100%' }}
-      >
-        <Grid item xs={3} align="center" className={classes.dataDrivenDashboard}>
-          <img style={{ width: '970px' }} src={dataDrivenDashboard} />
-        </Grid>
+      item
+      xs={12}
+     >
+      <Carousel />
+     </Grid>
+
+
+     <Grid
+        item
+        xs={12}
+        >
+        <div className={classes.sizeble}>
+          <h3 className={classes.sizebleTitle}> Price that</h3> <span className={classes.guessing}>makes sense</span>
+        </div>
       </Grid>
 
 
-      <Grid
-        container
-        spacing={0}
-        direction="column"
-        alignItems="center"
-        justify="center"
-        style={{ minHeight: '50vh', maxWidth: '100%' }}
-      >
-        <Grid item xs={3} align="center" className={classes.dataDrivenDashboard}>
-          <img style={{ width: '970px' }} src={returningCustomers} />
-        </Grid>
-      </Grid>
-
-      <Grid
-        container
-        spacing={0}
-        direction="column"
-        alignItems="center"
-        justify="center"
-        style={{ minHeight: '50vh', maxWidth: '100%' }}
-      >
-        <Typography variant="h4" className={classes.subtitle} gutterBottom>
-          Price that <span className={classes.guessing}>makes sense</span>
-        </Typography>
-        <Grid item xs={3} className={classes.boxPricing}>
+      <Grid item xs={3} className={classes.boxPricing}>
           { cardsPrincing.map(card => (
               <CardsPrincing cards={card} />
           )) }
-        </Grid>
       </Grid>
+
+
       <Grid
-        container
-        spacing={0}
-        direction="column"
-        alignItems="center"
-        justify="center"
-        style={{ minHeight: '50vh', maxWidth: '100%' }}
-      >
-        <Grid item xs={3} align="center" className={classes.dataDrivenDashboard}>
-          <Typography variant="h4" className={classes.subtitle} gutterBottom>
-            Subscribe to our <span className={classes.newsletter}>newsletter</span>
-          </Typography>
-        </Grid>
-        <Subscribe />
+        item
+        xs={12}
+        >
+        <div className={classes.sizeble}>
+          <h3 className={classes.sizebleTitle}> Want</h3> <span className={classes.guessing}>more details</span> <h3 className={classes.sizebleTitle}>?</h3>
+        </div>
       </Grid>
-    
-        
+
+      <Grid
+        item
+        xs={12}
+      >
+        <Typography variant="body2" color="textSecondary" component="p">
+          Unlock unmeasurable possibilities. Drop us a line and take the first step into making your virtual fitting room a reality. We usually reply within 24 hrs.
+        </Typography>
+      </Grid>
+
+      <Grid
+        item
+        xs={12}
+      >
+        <FormControl />
+      </Grid>
+
+    </Grid>
+    </div>
     </>
   );
 };

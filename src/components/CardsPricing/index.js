@@ -9,26 +9,39 @@ import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles({
   root: {
-    display: "flex",
-    justifyContent: "center",
+    minWidth: 275,
+    margin: 30,
     border: "1px solid #AFA9F2",
     borderRadius: "8px",
-    width: 260,
-    height: 350,
-    marginRight: 30,
   },
-  media: {
-    height: 140,
+  advanced: {
+    minWidth: 275,
+    margin: 30,
+    border: "1px solid #AFA9F2",
+    borderRadius: "8px",
+    backgroundColor: "#756CD9",
+    color: "#FFF"
   },
-  cardContent: {
-    margin: "0 auto",
-    width: "50%",
-    height: "50%",
+  bullet: {
+    display: 'inline-block',
+    margin: '0 2px',
+    transform: 'scale(0.8)',
+  },
+  title: {
+    fontSize: 38,
+  },
+  products: {
+    marginBottom: 12,
   },
   price: {
-    display: "flex",
-    justifyContent: "center",
+    fontSize: 48,
     color: "#756CD9"
+  },
+  buttonPosition: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "bottom",
+    
   },
   button: {
     fontFamily: "Open Sans, sans-serif",
@@ -38,16 +51,18 @@ const useStyles = makeStyles({
     color: "#FFFFFF",
     width: "170px"
   },
-  buttonPosition: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    marginTop: 70
+  buttonAdvanced: {
+    fontFamily: "Open Sans, sans-serif",
+    fontWeight: 600,
+    size: "10px",
+    backgroundColor: "#AAF2CC",
+    color: "#1F4D34",
+    width: "170px"
   },
-  subText: {
-    display: "flex",
-    justifyContent: "center"
-  }
+  priceWhite: {
+    fontSize: 48,
+    color: "#FFF"
+  },
 });
 
 const CardsPrincing = (props) => {
@@ -55,39 +70,85 @@ const CardsPrincing = (props) => {
   const { cards } = props;
 
   return (
+    <Card className={cards.title === "Advanced" ? classes.advanced   : classes.root}>
+    <CardContent>
+      <Typography className={classes.title} gutterBottom>
+        {cards.title}
+      </Typography>
+      
+      <Typography className={cards.title === "Advanced" ? classes.priceWhite   : classes.price}>
+      {cards.price}
+      </Typography>
 
-    <Card className={classes.root}>
-      <CardActionArea>
-        <CardContent className={classes.cardContent}>
-          <Typography gutterBottom variant="h4" component="h2">
-            {cards.title}
-          </Typography>
-          <Typography variant="body2" variant="h4" className={classes.price} component="p">
-            {cards.price}
-          </Typography>
-          <Typography variant="body2" className={classes.subText} component="p">
-            {cards.products}
-          </Typography>
-          <Typography variant="body2" className={classes.subText} component="p">
-            {cards.dashboard}
-          </Typography>
-          { cards.analytics && (
-            <Typography variant="body2" className={classes.subText} component="p">
-              {cards.analytics}
-            </Typography>
-          ) }
-          <Typography variant="body2" className={classes.subText} component="p">
-            {cards.user}
-          </Typography>
-        </CardContent>
-        <div className={classes.buttonPosition}>
-          <Button size="small" className={classes.button}>
+      <Typography variant="body2" className={classes.products}>
+      {cards.products}
+      </Typography>
+
+      
+      <Typography variant="body2" className={classes.products}>
+        {cards.dashboard}
+      </Typography>
+
+      { cards.analytics && (
+        <Typography variant="body2" className={classes.subText} component="p">
+          {cards.analytics}
+        </Typography>
+      ) }
+
+      <Typography variant="body2" className={classes.subText} component="p">
+          {cards.user}
+      </Typography>
+    </CardContent>
+    <CardActions>
+    <div className={classes.buttonPosition}>
+          <Button size="small" className={cards.title === "Advanced" ? classes.buttonAdvanced   : classes.button}>
             TRY IT FOR FREE
           </Button>
         </div>
-      </CardActionArea>
-    </Card>
+    </CardActions>
+  </Card>
   );
 };
 
 export default CardsPrincing;
+
+
+
+// root: {
+//   border: "1px solid #AFA9F2",
+//   borderRadius: "8px",
+//   marginRight: 30,
+// },
+// media: {
+//   height: 140,
+// },
+// cardContent: {
+//   display: "flex",
+//   flexDirection: "column"
+// },
+// price: {
+//   display: "flex",
+//   justifyContent: "center",
+//   color: "#756CD9"
+// },
+// button: {
+//   fontFamily: "Open Sans, sans-serif",
+//   fontWeight: 600,
+//   size: "10px",
+//   backgroundColor: "#756CD9",
+//   color: "#FFFFFF",
+//   width: "170px"
+// },
+// buttonPosition: {
+//   display: "flex",
+//   alignItems: "center",
+//   justifyContent: "center",
+//   marginTop: 70
+// },
+// subText: {
+//   display: "flex",
+//   justifyContent: "center"
+// },
+// title: {
+//   fontSize: 36
+// },

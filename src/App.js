@@ -6,8 +6,11 @@ import Home from './components/Home';
 
 const useStyles = makeStyles(() => ({
   home: {
-     backgroundColor: "#E5E5E5",
-  },
+    margin: 0,
+    padding: 0,
+    border: 'none',
+    outline: 'none',
+  }
 }));
 
 function App() {

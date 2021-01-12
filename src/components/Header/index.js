@@ -8,9 +8,11 @@ import {
 } from '@material-ui/core';
 
 import desizesLogo from '../../assets/desizesLogo.png';
+import desizesLandingPage from "../../assets/desizesLandingPage.png";
 
 const useStyles = makeStyles(() => ({
   header: {
+     backgroundImage: `url(${desizesLandingPage})`,
      backgroundColor: "#FFFFFF",
      paddingRight: "79px",
      paddingLeft: "100px",
@@ -22,7 +24,8 @@ const useStyles = makeStyles(() => ({
     fontWeight: 700,
     size: "18px",
     marginLeft: "38px",
-    textTransform: "none"
+    textTransform: "none",
+    color: "#FFF"
   },
   toolbar: {
     display: "flex",
@@ -33,8 +36,8 @@ const useStyles = makeStyles(() => ({
     fontWeight: 600,
     size: "10px",
     marginLeft: "38px",
-    backgroundColor: "#756CD9",
-    color: "#FFFFFF",
+    backgroundColor: "#AAF2CC",
+    color: "#1F4D34",
     width: "170px"
   }
 }));
@@ -70,11 +73,9 @@ const Header = () => {
 
 
   return (
-    <header>
       <AppBar className={classes.header}>
         {displayBar()}
       </AppBar>
-    </header>
   )
 }
 
