@@ -7,11 +7,12 @@ const useStyles = makeStyles(() => ({
     justifyContent: "center",
     border: "1px solid #AFA9F2",
     borderRadius: "8px",
-    width: 250,
+    width: 200,
     height: 230,
     marginRight: 30
   },
   titleCard: {
+    width: 200,
     fontSize: 14,
     color: "#000"
   },

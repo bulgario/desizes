@@ -38,7 +38,7 @@ const useStyles = makeStyles(() => ({
     marginLeft: "38px",
     backgroundColor: "#AAF2CC",
     color: "#1F4D34",
-    width: "170px"
+    width: 125
   }
 }));
 
@@ -48,16 +48,19 @@ const Header = () => {
   const buttonList = () => (
     <>
       <Button className={classes.menuButton}>
-        How it works
+        FEATURES
       </Button>
       <Button className={classes.menuButton}>
-        Clients
+        BENEFITS
       </Button>
       <Button className={classes.menuButton}>
-        About
+        PRICING
+      </Button>
+      <Button className={classes.menuButton}>
+        LET'S TALK
       </Button>
       <Button className={classes.tryItForFreeButton}>
-        TRY IT FOR FREE
+        TRY IT OUT
       </Button>
     </>
   );

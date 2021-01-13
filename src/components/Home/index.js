@@ -27,30 +27,36 @@ const useStyles = makeStyles(() => ({
     justifyContent: 'center',
     width: '100%',
     paddingTop: 20,
-    fontSize: 50
+    fontSize: 50,
+    fontWeight: 'bold',
+    color: '#FFF'
   },
   subtitle: {
     display: 'flex',
     justifyContent: 'center',
     width: '100%',
     paddingTop: 20,
-    fontSize: 20
+    fontSize: 20,
+    color: '#FFF'
   },
   titlePosition: {
     paddingTop: 90
   },
   guessing: {
     fontSize: 50,
+    fontWeight: 'bold',
     color: "#ffb259"
   },
   sizeble: {
     display: 'flex',
     justifyContent: 'center',
     width: '100%',
-    marginTop: 80
+    marginTop: 40,
+    marginBottom: 50
   },
   sizebleTitle: {
-    fontSize: 50
+    fontSize: 50,
+    fontWeight: 'bold'
   },
   box: {
     display: "flex",
@@ -73,23 +79,28 @@ const Home = () => {
 
   const cards = [
     {
-      title: "Customizable",
-      subTitle: "Make your sizing guide as unique as your brand.",
+      title: "Interactive",
+      subTitle: "Allow your customers to try your products virtually.",
       img: wand
     },
     {
-      title: "Hassle Free",
-      subTitle: "We integrate with the most used e-commerce platforms.",
+      title: "Informative",
+      subTitle: "Unlock key metrics with our dashboard.",
       img: hassle
     },
     {
       title: "Omni Channel",
-      subTitle: "Simplify size choice wherever your customers are buying.",
+      subTitle: "Meet your customer wherever they are.",
       img: omni
     },
     {
-      title: "Visual",
-      subTitle: "Allow customers to see and interact with your products.",
+      title: "Customizable",
+      subTitle: "Your store, your rues..",
+      img: visual
+    },
+    {
+      title: "Hassle Free",
+      subTitle: "Get up and running in [a week.]",
       img: visual
     }
   ];
@@ -156,7 +167,7 @@ const Home = () => {
         xs={12}
         >
         <div className={classes.sizeble}>
-          <h3 className={classes.sizebleTitle}> A sizable upgrade</h3><h3 className={classes.guessing}>upgrade</h3>
+          <h3 className={classes.sizebleTitle}> A sizable upgrade</h3> <h3 className={classes.guessing}>upgrade</h3>
         </div>
       </Grid>
 
@@ -213,7 +224,8 @@ const Home = () => {
         xs={12}
       >
         <Typography variant="body2" color="textSecondary" component="p">
-          Unlock unmeasurable possibilities. Drop us a line and take the first step into making your virtual fitting room a reality. We usually reply within 24 hrs.
+          Unlock unmeasurable possibilities. Drop us a line and take the first step into making your virtual fitting room a reality.<br></br>
+          We usually reply within 24 hrs.
         </Typography>
       </Grid>
 
@@ -224,6 +236,14 @@ const Home = () => {
         <FormControl />
       </Grid>
 
+
+      <Grid item xs={12}>
+        <h2 className={classes.sizebleTitle}> Subscribe to our</h2> <span className={classes.guessing}>newsletter</span>
+      </Grid>
+
+      <Grid item xs={12}>
+        <Subscribe />
+      </Grid>
     </Grid>
     </div>
     </>

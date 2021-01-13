@@ -9,7 +9,8 @@ import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles({
   root: {
-    minWidth: 275,
+    minWidth: 270,
+    minHeight: 400,
     margin: 30,
     border: "1px solid #AFA9F2",
     borderRadius: "8px",
@@ -29,12 +30,14 @@ const useStyles = makeStyles({
   },
   title: {
     fontSize: 38,
+    fontWeight: 'bold',
   },
   products: {
     marginBottom: 12,
   },
   price: {
     fontSize: 48,
+    fontWeight: 'bold',
     color: "#756CD9"
   },
   buttonPosition: {
